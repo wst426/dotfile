@@ -29,6 +29,7 @@ require("nvim-tree").setup({
     view = {
         number = true,
         relativenumber = true,
+        width = 60,
         mappings = {
             list = {
                 { key = "q", action = "close" },
@@ -46,4 +47,5 @@ require("nvim-tree").setup({
     },
 })
 
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>r", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>t", ":NvimTreeFindFile<CR>")
