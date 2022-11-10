@@ -20,6 +20,9 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 
+-- line wrap
+vim.o.wrap = false
+
 -- netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
