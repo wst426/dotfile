@@ -5,11 +5,27 @@ require("nvim-autopairs").setup({})
 require("leap").add_default_mappings()
 
 -- telescope
+local showSymbolFinder = function ()
+    local opts = {}
+    if vim.bo.filetype == "typescript" then
+        opts.symbols = {
+            "interface",
+            "class",
+            "constructor",
+            "method",
+        }
+    end
+    require('telescope.builtin').lsp_document_symbols(opts)
+end
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>fs", showSymbolFinder, {})
+vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions, {})
+vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations, {})
+vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {})
 
 -- treesitter
 require("nvim-treesitter.configs").setup({
