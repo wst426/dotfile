@@ -4,6 +4,23 @@ require("nvim-autopairs").setup({})
 -- leap
 require("leap").add_default_mappings()
 
+-- bufferline
+require("bufferline").setup({
+    options = {
+        offsets = {
+           {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory",
+            separator = true,
+        }
+        }
+    }
+})
+vim.keymap.set("n", "<leader>bn", ":BufferLineCyclePrev<CR>");
+vim.keymap.set("n", "<leader>bp", ":BufferLineCycleNext<CR>");
+vim.keymap.set("n", "<leader>bx", ":bdelete<CR>");
+
 -- telescope
 local showSymbolFinder = function ()
     local opts = {}
