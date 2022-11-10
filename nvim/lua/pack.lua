@@ -32,6 +32,14 @@ return require("packer").startup(function(use)
         run = ":TSUpdate",
     })
 
+    -- git
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+
     -- lsp
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
