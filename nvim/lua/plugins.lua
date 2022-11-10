@@ -28,8 +28,13 @@ vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations, {})
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, {})
 
 -- treesitter
+vim.cmd([[
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+    set nofoldenable
+]])
 require("nvim-treesitter.configs").setup({
-    ensure_installer = { "lua" },
+    ensure_installer = { "lua", "typescript", "markdown", "json", "python" },
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
