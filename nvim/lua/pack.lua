@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
     })
 
     -- tab line
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
     -- motion
     use("ggandor/leap.nvim")
@@ -33,12 +33,12 @@ return require("packer").startup(function(use)
     })
 
     -- git
-    use {
-        'lewis6991/gitsigns.nvim',
+    use({
+        "lewis6991/gitsigns.nvim",
         config = function()
-            require('gitsigns').setup()
-        end
-    }
+            require("gitsigns").setup()
+        end,
+    })
 
     -- lsp
     use("williamboman/mason.nvim")

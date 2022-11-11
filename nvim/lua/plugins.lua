@@ -8,21 +8,21 @@ require("leap").add_default_mappings()
 require("bufferline").setup({
     options = {
         offsets = {
-           {
-            filetype = "NvimTree",
-            text = "File Explorer",
-            highlight = "Directory",
-            separator = true,
-        }
-        }
-    }
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                highlight = "Directory",
+                separator = true,
+            },
+        },
+    },
 })
-vim.keymap.set("n", "<leader>bn", ":BufferLineCyclePrev<CR>");
-vim.keymap.set("n", "<leader>bp", ":BufferLineCycleNext<CR>");
-vim.keymap.set("n", "<leader>bx", ":bdelete<CR>");
+vim.keymap.set("n", "<leader>bn", ":BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<leader>bp", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>bx", ":bdelete<CR>")
 
 -- telescope
-local showSymbolFinder = function ()
+local showSymbolFinder = function()
     local opts = {}
     if vim.bo.filetype == "typescript" then
         opts.symbols = {
@@ -32,7 +32,7 @@ local showSymbolFinder = function ()
             "method",
         }
     end
-    require('telescope.builtin').lsp_document_symbols(opts)
+    require("telescope.builtin").lsp_document_symbols(opts)
 end
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
