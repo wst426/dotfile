@@ -17,8 +17,8 @@ require("bufferline").setup({
         },
     },
 })
-vim.keymap.set("n", "<leader>bn", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>bp", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>bn", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<leader>bx", ":bdelete<CR>")
 
 -- telescope
