@@ -20,6 +20,15 @@ return require("packer").startup(function(use)
     -- tab line
     use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
+    -- status line
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        config = function()
+            require("lualine").setup()
+        end,
+    })
+
     -- motion
     use("ggandor/leap.nvim")
 
