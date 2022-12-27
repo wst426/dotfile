@@ -29,3 +29,6 @@ vim.g.loaded_netrwPlugin = 1
 
 -- termguicolors
 vim.opt.termguicolors = true
+
+-- clipboard
+vim.cmd([[ set clipboard=unnamedplus ]])
