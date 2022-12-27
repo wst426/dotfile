@@ -5,6 +5,7 @@ return require("packer").startup(function(use)
     -- theme
     use("nvim-tree/nvim-web-devicons")
     use("shaunsingh/nord.nvim")
+    use("folke/tokyonight.nvim")
 
     -- file explorer
     use({
@@ -25,7 +26,7 @@ return require("packer").startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
-            require("lualine").setup()
+            require("lualine").setup({})
         end,
     })
 
